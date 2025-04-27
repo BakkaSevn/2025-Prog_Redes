@@ -1,9 +1,9 @@
 # 👨‍💻 Programación Sobre Redes - 2025 👨‍💻
-
-Benjamín Nehemías Castro Madrid 6to 1ra Computación
-Correo: benjamin.castromadrid28et32@gmail.com
+#### Benjamín Nehemías Castro Madrid 6to 1ra Computación
+#### Correo: benjamin.castromadrid28et32@gmail.com
 
 Este repositorio está dedicado a la materia **Programación sobre Redes**, dictada por el profesor **Gonzalo Nicolás Consorti** en la **Escuela General José de San Martín ET32**, ubicada en el Distrito Escolar 14. La materia se imparte durante el año **2025** y está enfocada en proporcionar una comprensión profunda de los conceptos fundamentales de las redes y la programación orientada a ellas.
+
 
 ## Objetivo del repositorio
 
