@@ -14,23 +14,25 @@ public class main{
 				int aux = Integer.parseInt(br.readLine());
 					switch(aux){
 					case 1:
-						Ejercicios.primer_Ejercicio();
+						UsandoSystem.primer_Ejercicio();
 						break;
 					case 2:
-						Ejercicios.segundo_Ejercicio();
+						UsandoSystem.segundo_Ejercicio();
 						break;
 					case 3:
-						Ejercicios.tercer_Ejercicio();
+						UsandoSystem.tercer_Ejercicio();
 						break;
 					case 4:
-						Ejercicios.cuarto_Ejercicio();
+						UsandoSystem.cuarto_Ejercicio();
 						break;
 					case 5:
-						Ejercicios.quinto_Ejercicio();
+						UsandoSystem.quinto_Ejercicio();
 						break;
 					case 7:
-						Ejercicios.septimo_Ejercicio();
+						UsandoSystem.septimo_Ejercicio();
 						break;
+					case 8:
+						UsandoReader.segundo_ejercicio();
 					default:
 						System.out.println("Seleccione una opción entre 1-8.");
 						break;
