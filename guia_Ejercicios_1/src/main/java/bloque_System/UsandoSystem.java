@@ -9,6 +9,7 @@ import java.util.Locale;
 public class UsandoSystem {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static PrintStream ps = new PrintStream(System.out);
+	static PrintStream err = new PrintStream(System.err);
 	
 	
 	
@@ -54,8 +55,10 @@ public class UsandoSystem {
 			}else {
 				ps.println("Esto no puede ocurrir, ya que el último ángulo será de 0°");
 			}
-			//
-		}catch(IOException e){}
+			ps.flush();
+		}catch(IOException e){
+			err.print("Se ingresaron los datos de manera incorrecta.");
+		}
 	}
 	public static void tercer_Ejercicio(){
 		try {
@@ -64,7 +67,9 @@ public class UsandoSystem {
 			double lado = Math.sqrt(sup);
 			int perimeter = (int) (4*lado);
 			ps.printf("El perimetro del valor ingresado es de: %d", perimeter);
-		}catch(IOException e) {}
+		}catch(IOException e) {
+			err.print("Se ingresaron los datos de manera incorrecta.");
+		}
 	}
 	public static void cuarto_Ejercicio(){
 		try {
@@ -72,7 +77,10 @@ public class UsandoSystem {
 			int tempF = Integer.parseInt(leerLinea());
 			int tempC = (tempF-32) * 5/9;
 			ps.println("Su temperatura en Celsius es de: "+ tempC);
-		}catch(IOException e){}
+			ps.flush();
+		}catch(IOException e){
+			err.print("Se ingresaron los datos de manera incorrecta.");
+		}
 	}
 	public static void quinto_Ejercicio(){
 		ps.println("Ingrese su valor en segundos: ");
@@ -89,7 +97,10 @@ public class UsandoSystem {
 			int min = restHour/60;
 			int restSec = restHour % 60;
 			ps.println(String.format("Días: %d, Horas: %d, Minutos: %d, Segundos: %d", day, hour, min, restSec));
-		}catch(IOException e){}
+			ps.flush();
+		}catch(IOException e){
+			err.print("Se ingresaron los datos de manera incorrecta.");
+		}
 		
 	}
 	public static void sexto_Ejercicio(){
@@ -119,7 +130,10 @@ public class UsandoSystem {
 				float ultimCuotas = (float) (aux2*0.40/4);
 				ps.printf("El valor final del producto será de: %g, las primeras 4 cuotas son de: %g y las últimas son de: %g", aux2, primCuotas, ultimCuotas);
 			}
-		}catch(IOException e){}
+			ps.flush();
+		}catch(IOException e){
+			err.print("Se ingresaron los datos de manera incorrecta.");
+		}
 	}
 	public static void septimo_Ejercicio(){
 		ps.println("Ingrese su signo zodiacal: ");
@@ -164,7 +178,9 @@ public class UsandoSystem {
 				        ps.println("Su fecha de nacimiento está entre 19 de febrero y 20 de marzo");
 				        break;
 					}
+					ps.flush();
+			}catch(IOException e){
+				err.print("Se ingresaron los datos de manera incorrecta.");
+				}
 			}
-				        catch(IOException e){}
-					}
-			}
+	}
