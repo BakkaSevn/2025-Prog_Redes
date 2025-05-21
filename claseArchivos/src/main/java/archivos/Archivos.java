@@ -1,11 +1,14 @@
 package archivos;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,7 +22,7 @@ public class Archivos {
 		ps = new PrintStream(System.out);
 		file = new File("C:\\Users\\Redes-20\\Desktop\\XVideos.porno");
 		/**
-		 * filee = new File("C:\\Users\\Redes-20\\Desktop\\PornHub.porno");
+		filee = new File("C:\\Users\\Redes-20\\Desktop\\PornHub.porno");
 		file.delete();
 		file.deleteOnExit();
 		file.exists();
@@ -92,14 +95,74 @@ public class Archivos {
 	}//Fin crearFileConPrintStreamEasy
 	
 	public void crearFileConPrinter(File f) {
+		FileWriter fw = null; //usa buffered directo
+		PrintWriter pw = null;
+		try {
+			if(!f.exists()) {
+				try {
+					f.createNewFile();
+				}catch(IOException e) {
+					Logger.getLogger(Archivos.class.getName()).log(Level.WARNING,null,e);
+				}
+			}
+			
+			fw = new FileWriter(f);
+			pw = new PrintWriter(fw);
+			
+			pw.print("Visiten Xvideos.com");
+			pw.print("Crearle una cuenta a MonsterCreator");
+			pw.println("Visiten PornHub.com");
+			pw.write('d');
+			pw.append(("Gonza genio"));
+			pw.flush();
+		}catch(FileNotFoundException e) {
+			Logger.getLogger(Archivos.class.getName()).log(Level.WARNING,null,e);
+		}catch(IOException e){
+			Logger.getLogger(Archivos.class.getName()).log(Level.WARNING,null,e);
+		}finally{
+			try{
+				if(pw != null) {
+					pw.close();
+				}
+				if(fw != null) {
+					fw.close();
+				}
+			}catch(IOException e) {
+				Logger.getLogger(Archivos.class.getName()).log(Level.WARNING,null,e);
+			}
+		}//Finally
+		
 	}
-
+	
 	/**
 	*
 	* @param f
 	 * @return 
 	*/
 	public void crearFileConBuffer(File f) {
+		BufferedWriter bw = null;
+		FileWriter fw = null;
+		
+		try {
+			fw = new FileWriter(f , false ); //append
+			bw = new BufferedWriter(fw);
+			
+			bw.append("ss");
+			bw.write("s");
+			bw.newLine();
+			bw.flush(); //Opcional Buffered
+		}catch(IOException e) {
+			Logger.getLogger(Archivos.class.getName()).log(Level.WARNING,null,e);
+		}finally {
+			try {
+				if(fw != null)
+					fw.close();
+				if(bw != null)
+					bw.close();
+			}catch(IOException e) {
+				Logger.getLogger(Archivos.class.getName()).log(Level.WARNING,null,e);
+			}
+		}
 	}
 	
 	/**
